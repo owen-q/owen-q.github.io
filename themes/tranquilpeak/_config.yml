@@ -61,6 +61,13 @@ sidebar:
         #     title: global.github
         #     url: https://github.com/
         #     icon: github
+
+        github:
+             title: global.github
+             url: https://github.com/owen-q
+             icon: github
+
+
         # stack_overflow:
         #     title: global.stack_overflow
         #     url: http://stackoverflow.com/users
@@ -81,10 +88,24 @@ sidebar:
         #     title: global.linkedin
         #     url: https://www.linkedin.com/profile/
         #     icon: linkedin
+
+        linked_in:
+           title: global.linkedin
+           url: https://www.linkedin.com/in/dong-kyoo-lee-lunker/
+           icon: linkedin
+
         # mail:
         #     title: global.mail
         #     url: mailto:
         #     icon: envelope-o
+
+
+        mail:
+             title: global.mail
+             url: mailto:owen.q.dev@gmail.com
+             icon: envelope-o
+
+
     rss:
         rss:
             title: global.rss
@@ -117,13 +138,13 @@ header:
 
 # Your biography and your job is editable in each languages files in `languages` folder
 author:
-    email:
-    location:
+    email: owen.q.dev@gmail.com
+    location: Seoul
     # Your profile picture located in folder `source/_images/` (development)
     # or in `source/assets/images/` (production)
     # or you can use an external url
     # Overwritten by your gravatar image if `gravatar_email` is filled
-    picture:
+    picture: profile-dk.jpeg
     # Your Twitter username without the @. E.g : `tranquilpeak`
     twitter:
     # Your personal google plus profile id, not your blog or business page id.
@@ -132,6 +153,10 @@ author:
     # Your businnes google plus profile id. If not provided, personal will be used instead.
     # E.g : `+Tranquilpeak` or `123812884128439`
     google_plus_business:
+
+    bio: Java Backend Developer
+
+    job: Developer
 
 
 # -------------
@@ -187,7 +212,7 @@ tag_pagination: true
 # ---------------
 
 # Your Disqus shortname
-disqus_shortname:
+disqus_shortname: owen-q-github-io
 # Your Gitment information
 # Read https://github.com/imsun/gitment#get-started to setup Gitment
 gitment:
@@ -207,7 +232,7 @@ gitment:
 # -------------------
 
 # Your Google analystics web property ID : UA-XXXXX-X
-google_analytics_id:
+google_analytics_id: UA-120963122-1
 # Your Baidu analystics web property ID : 9505a5af654a2478f93fd6c0ae4f687d
 baidu_analytics_id:
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog

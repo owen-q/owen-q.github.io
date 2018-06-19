@@ -6,8 +6,8 @@
 title: Dev repository
 subtitle: 
 description:
-keywords:
-author: John Doe
+keywords: 
+author: Owen Q
 language: en
 timezone:
 
@@ -89,3 +89,31 @@ feed:
   type: atom
   path: atom.xml
   limit: 20 
+
+
+# markdown 
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+
+
+
+# SEO
+## hexo-autonofollow 
+nofollow:
+  enable: true
+  
+## Sitemap
+sitemap:
+  path: sitemap.xml
