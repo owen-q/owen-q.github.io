@@ -5,8 +5,11 @@
 # Site
 title: Dev repository
 subtitle: 
-description:
+description: 개발 블로그 
 keywords: 
+ - Java
+ - Developer
+ - Backend
 author: Owen Q
 language: en
 timezone:
@@ -117,3 +120,9 @@ nofollow:
 ## Sitemap
 sitemap:
   path: sitemap.xml
+
+## robots.txt
+robotstxt:
+  User-agent: '*'
+  Allow: /
+  Sitemap: /sitemap.xml
