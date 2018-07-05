@@ -142,8 +142,8 @@ nofollow:
 4) Select a plan 
 원하는 plan으로 설정한다.
 
+(DOING...) 
 5) 
-
 
 
 

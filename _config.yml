@@ -76,14 +76,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: landscape
+#theme: landscape
 theme: tranquilpeak
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com-owen:owen-q/owen-q.github.io.git
+  repo: git@github.com:owen-q/owen-q.github.io.git
 
 
 
