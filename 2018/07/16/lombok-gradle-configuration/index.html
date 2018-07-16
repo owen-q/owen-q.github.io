@@ -16,7 +16,7 @@
 
 
 
-    <title>mysql collate - Dev repository</title>
+    <title>lombok gradle 설치하기 - Dev repository</title>
     <meta name="author" content="Owen Q">
     
         <meta name="keywords" content="Java,Developer,Backend,">
@@ -25,19 +25,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg"},"articleBody":"Character Set &amp; Collate문자열 Datatype에는 문자셋(Character set)과 콜레이션(Collation) 속성이 있다. \n문자셋은 각 문자가 컴퓨터에 저장될 때 어떠한 ‘코드’로 저장될지에 대한 규칙의 집합Collation은 특정 문자셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서로 비교할 때 사용하는 규칙들의 집합을 의미한다. \n\nCharset은 server, database, table, column level에서 지정이 가능하다.\n\nCharacter Sets &amp; Collations in General(https://dev.mysql.com/doc/refman/5.7/en/charset-general.html) \nCharacter Set이란?\ncharacter set은 set of symbols &amp; encodings.\n예를들어,  문자열 A,B,C,D가 있다.이때 각 문자열에 대해서 A=0, B=1, C=2, D=3 이라고 했을때,0, 1, 2, 3은 encoding 에 해당된다.\n\n따라서 Symbol ‘A,B,C,D’와 encoding ‘0,1,2,3’을 합친것을  Character Set  이라 한다. \n\nCharacter Set 조회show character set;\n\n서로 다른 char set들은 같은 collation을 가질 수 없다. \n\nChar set은 default collation을 가지고 있다. \n\n\nASCII &lt;= UNICODE( ascii로 저장되어 있는 것들은 UNICODE로 전환하여도 손실이 없다.) \n\n\nConnection Character Sets and Collations(https://dev.mysql.com/doc/refman/5.7/en/charset-connection.html) \n\n\nServer’s character set &amp; collation :: character_set_server, collation_server variables \n\nClient가 Server에 연결후 쿼리를 요청하면, client는 해당 쿼리를 ‘character_set_client’에 설정되어 있는 character set으로 전송한다. \nget mysql system variable  \n\nselect @@{system_variable}\n\n서버가 connection을 통해서 statement를 받으면, 아래와 같은 일이 발생한다.\n\nclient로부터 받은 statement를 ‘character_set_client’에서 ‘character_set_connection’으로 변환한다.\n‘collation_connection’은 String 비교시에 중요하게 사용된다. 하지만 column에 설정되어 있는 collation이 더 상위이므로 이때에는 ‘collation_connection’은 무시된다.\n\nServer가 Client에게 값을 반환할 때에는 ‘character_set_results’를 사용한다. \n\nSET NAMES ‘CHARSET-NAME’이 쿼리는 해당 connection을 통해서 보내어지고 받을 데이터들의 charaset을 정의한다.character_set_client, character_set_results, character_set_connection 을 한번에 ‘CHARSET-NAME’으로 설정한다.  \n\n","dateCreated":"2018-07-06T08:23:37+09:00","dateModified":"2018-07-06T08:26:58+09:00","datePublished":"2018-07-06T08:23:37+09:00","description":"","headline":"mysql collate","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://owen-q.github.io/2018/07/06/mysql-collate/"},"publisher":{"@type":"Organization","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg","logo":{"@type":"ImageObject","url":"profile-dk.jpeg"}},"url":"https://owen-q.github.io/2018/07/06/mysql-collate/","keywords":"db, mysql"}</script>
-    <meta name="description" content="Character Set &amp;amp; Collate문자열 Datatype에는 문자셋(Character set)과 콜레이션(Collation) 속성이 있다.  문자셋은 각 문자가 컴퓨터에 저장될 때 어떠한 ‘코드’로 저장될지에 대한 규칙의 집합Collation은 특정 문자셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서">
-<meta name="keywords" content="db,mysql">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg"},"articleBody":"lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &#123;\text &#123;\t\tspringBootVersion = &apos;2.0.3.RELEASE&apos;\t&#125;\trepositories &#123;\t\tmavenCentral()\t\tmaven &#123;\t\t\turl &quot;https://plugins.gradle.org/m2/&quot;\t\t&#125;\t&#125;\tdependencies &#123;\t\tclasspath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot;)\t\tclasspath(&quot;io.franzbecker:gradle-lombok:1.14&quot;) //추가\t&#125;&#125;......apply plugin: &apos;io.franzbecker.gradle-lombok&apos; //추가......dependencies &#123;\tcompileOnly(&apos;org.projectlombok:lombok:1.18.0&apos;)// &#125;\n","dateCreated":"2018-07-16T13:08:05+09:00","dateModified":"2018-07-16T14:04:53+09:00","datePublished":"2018-07-16T13:08:05+09:00","description":"","headline":"lombok gradle 설치하기","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/"},"publisher":{"@type":"Organization","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg","logo":{"@type":"ImageObject","url":"profile-dk.jpeg"}},"url":"https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/","keywords":"lombok, configuration"}</script>
+    <meta name="description" content="lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &amp;#123;	ext &amp;#123;		springBootVersion = &amp;apos;2.0.3.RELEASE&amp;apos;	&amp;#125;	repositories &amp;#123;		mavenCentr">
+<meta name="keywords" content="lombok,configuration">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="mysql collate">
-<meta property="og:url" content="https://owen-q.github.io/2018/07/06/mysql-collate/index.html">
+<meta property="og:title" content="lombok gradle 설치하기">
+<meta property="og:url" content="https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/index.html">
 <meta property="og:site_name" content="Dev repository">
-<meta property="og:description" content="Character Set &amp;amp; Collate문자열 Datatype에는 문자셋(Character set)과 콜레이션(Collation) 속성이 있다.  문자셋은 각 문자가 컴퓨터에 저장될 때 어떠한 ‘코드’로 저장될지에 대한 규칙의 집합Collation은 특정 문자셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서">
+<meta property="og:description" content="lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &amp;#123;	ext &amp;#123;		springBootVersion = &amp;apos;2.0.3.RELEASE&amp;apos;	&amp;#125;	repositories &amp;#123;		mavenCentr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-05T23:26:58.000Z">
+<meta property="og:updated_time" content="2018-07-16T05:04:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql collate">
-<meta name="twitter:description" content="Character Set &amp;amp; Collate문자열 Datatype에는 문자셋(Character set)과 콜레이션(Collation) 속성이 있다.  문자셋은 각 문자가 컴퓨터에 저장될 때 어떠한 ‘코드’로 저장될지에 대한 규칙의 집합Collation은 특정 문자셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서">
+<meta name="twitter:title" content="lombok gradle 설치하기">
+<meta name="twitter:description" content="lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &amp;#123;	ext &amp;#123;		springBootVersion = &amp;apos;2.0.3.RELEASE&amp;apos;	&amp;#125;	repositories &amp;#123;		mavenCentr">
     
     
         
@@ -232,20 +232,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            mysql collate
+            lombok gradle 설치하기
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2018-07-06T08:23:37+09:00">
+    <time datetime="2018-07-16T13:08:05+09:00">
 	
-		    Jul 06, 2018
+		    Jul 16, 2018
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Tech/">Tech</a>
+    <a class="category-link" href="/categories/Java/">Java</a>
 
 
     
@@ -257,47 +257,7 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h1 id="Character-Set-amp-Collate"><a href="#Character-Set-amp-Collate" class="headerlink" title="Character Set &amp; Collate"></a>Character Set &amp; Collate</h1><p>문자열 Datatype에는 문자셋(Character set)과 콜레이션(Collation) 속성이 있다. </p>
-<p>문자셋은 각 문자가 컴퓨터에 저장될 때 어떠한 ‘코드’로 저장될지에 대한 규칙의 집합<br>Collation은 특정 문자셋에 의해 데이터베이스에 저장된 값들을 비교 검색하거나 정렬 등의 작업을 위해 문자들을 서로 비교할 때 사용하는 규칙들의 집합을 의미한다. </p>
-<ul>
-<li>Charset은 server, database, table, column level에서 지정이 가능하다.</li>
-</ul>
-<h1 id="Character-Sets-amp-Collations-in-General"><a href="#Character-Sets-amp-Collations-in-General" class="headerlink" title="Character Sets &amp; Collations in General"></a>Character Sets &amp; Collations in General</h1><p>(<a href="https://dev.mysql.com/doc/refman/5.7/en/charset-general.html" rel="external nofollow noopener noreferrer" target="_blank">https://dev.mysql.com/doc/refman/5.7/en/charset-general.html</a>) </p>
-<h4 id="Character-Set이란"><a href="#Character-Set이란" class="headerlink" title="Character Set이란?"></a>Character Set이란?</h4><ul>
-<li>character set은 set of symbols &amp; encodings.</li>
-<li>예를들어,  문자열 A,B,C,D가 있다.<br>이때 각 문자열에 대해서 A=0, B=1, C=2, D=3 이라고 했을때,<br>0, 1, 2, 3은 <strong>encoding</strong> 에 해당된다.</li>
-</ul>
-<p>따라서 Symbol ‘A,B,C,D’와 encoding ‘0,1,2,3’을 합친것을 <strong><em> Character Set </em></strong> 이라 한다. </p>
-<ul>
-<li><p>Character Set 조회<br>show character set;</p>
-</li>
-<li><p>서로 다른 char set들은 같은 collation을 가질 수 없다. </p>
-</li>
-<li>Char set은 default collation을 가지고 있다. </li>
-</ul>
-<ul>
-<li>ASCII &lt;= UNICODE<br>( ascii로 저장되어 있는 것들은 UNICODE로 전환하여도 손실이 없다.) </li>
-</ul>
-<ul>
-<li>Connection Character Sets and Collations<br>(<a href="https://dev.mysql.com/doc/refman/5.7/en/charset-connection.html" rel="external nofollow noopener noreferrer" target="_blank">https://dev.mysql.com/doc/refman/5.7/en/charset-connection.html</a>) </li>
-</ul>
-<ul>
-<li>Server’s character set &amp; collation :: character_set_server, collation_server variables </li>
-</ul>
-<p>Client가 Server에 연결후 쿼리를 요청하면, client는 해당 쿼리를 ‘character_set_client’에 설정되어 있는 character set으로 전송한다. </p>
-<p><strong>get mysql system variable</strong>  </p>
-<ul>
-<li>select @@{system_variable}</li>
-</ul>
-<p>서버가 connection을 통해서 statement를 받으면, 아래와 같은 일이 발생한다.</p>
-<ul>
-<li>client로부터 받은 statement를 ‘character_set_client’에서 ‘character_set_connection’으로 변환한다.</li>
-<li>‘collation_connection’은 String 비교시에 중요하게 사용된다. 하지만 column에 설정되어 있는 collation이 더 상위이므로 이때에는 ‘collation_connection’은 무시된다.</li>
-</ul>
-<p>Server가 Client에게 값을 반환할 때에는 ‘character_set_results’를 사용한다. </p>
-<ul>
-<li>SET NAMES ‘CHARSET-NAME’<br>이 쿼리는 해당 connection을 통해서 보내어지고 받을 데이터들의 charaset을 정의한다.<br><code>character_set_client</code>, <code>character_set_results</code>, <code>character_set_connection</code> 을 한번에 ‘CHARSET-NAME’으로 설정한다.  </li>
-</ul>
+            <h1 id="lombok-gradle-설정하기"><a href="#lombok-gradle-설정하기" class="headerlink" title="lombok + gradle 설정하기"></a>lombok + gradle 설정하기</h1><p><strong><em>build.gradle</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">	ext &#123;</span><br><span class="line">		springBootVersion = &apos;2.0.3.RELEASE&apos;</span><br><span class="line">	&#125;</span><br><span class="line">	repositories &#123;</span><br><span class="line">		mavenCentral()</span><br><span class="line">		maven &#123;</span><br><span class="line">			url &quot;https://plugins.gradle.org/m2/&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dependencies &#123;</span><br><span class="line">		classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot;)</span><br><span class="line">		classpath(&quot;io.franzbecker:gradle-lombok:1.14&quot;) //추가</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">apply plugin: &apos;io.franzbecker.gradle-lombok&apos; //추가</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">	compileOnly(&apos;org.projectlombok:lombok:1.18.0&apos;)// </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             
 
@@ -308,7 +268,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/db/">db</a> <a class="tag tag--primary tag--small t-link" href="/tags/mysql/">mysql</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/configuration/">configuration</a> <a class="tag tag--primary tag--small t-link" href="/tags/lombok/">lombok</a>
 
             </div>
         
@@ -318,8 +278,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/16/lombok-gradle-configuration/" data-tooltip="lombok gradle 설치하기" aria-label="PREVIOUS: lombok gradle 설치하기">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -328,7 +287,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/19/hexo-tranquilpeak-config/" data-tooltip="hexo tranquilpeak 설정" aria-label="NEXT: hexo tranquilpeak 설정">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/06/mysql-collate/" data-tooltip="mysql collate" aria-label="NEXT: mysql collate">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -346,7 +305,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/06/mysql-collate/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -354,7 +313,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/06/mysql-collate/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -362,7 +321,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/06/mysql-collate/" title="Share on Google+" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Google+" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -414,8 +373,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/16/lombok-gradle-configuration/" data-tooltip="lombok gradle 설치하기" aria-label="PREVIOUS: lombok gradle 설치하기">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -424,7 +382,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/06/19/hexo-tranquilpeak-config/" data-tooltip="hexo tranquilpeak 설정" aria-label="NEXT: hexo tranquilpeak 설정">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/06/mysql-collate/" data-tooltip="mysql collate" aria-label="NEXT: mysql collate">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -442,7 +400,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/06/mysql-collate/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -450,7 +408,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/06/mysql-collate/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -458,7 +416,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/06/mysql-collate/" title="Share on Google+" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Google+" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -491,7 +449,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/06/mysql-collate/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -499,7 +457,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/06/mysql-collate/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -507,7 +465,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/06/mysql-collate/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -565,9 +523,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://owen-q.github.io/2018/07/06/mysql-collate/';
+                 this.page.url = 'https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/';
                  
-                    this.page.identifier = '2018/07/06/mysql-collate/';
+                    this.page.identifier = '2018/07/16/lombok-gradle-configuration/';
                  
              };
             (function() {
