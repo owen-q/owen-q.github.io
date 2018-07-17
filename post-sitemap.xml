@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/</loc>
+        <lastmod>2018-07-17T13:11:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/</loc>
         <lastmod>2018-07-17T05:17:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
