@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://owen-q.github.io/"/>
-  <updated>2018-07-16T05:04:53.000Z</updated>
+  <updated>2018-07-17T05:17:37.000Z</updated>
   <id>https://owen-q.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented</title>
+    <link href="https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/"/>
+    <id>https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/</id>
+    <published>2018-07-17T05:15:57.000Z</published>
+    <updated>2018-07-17T05:17:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring-boot2-hibernate-postgresql-clob-exception"><a href="#Spring-boot2-hibernate-postgresql-clob-exception" class="headerlink" title="Spring boot2 + hibernate + postgresql clob exception"></a>Spring boot2 + hibernate + postgresql clob exception</h1><p><strong><em>application.properties</em></strong> 에 아래 설정 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false</span><br><span class="line">spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spring-boot2-hibernate-postgresql-clob-exception&quot;&gt;&lt;a href=&quot;#Spring-boot2-hibernate-postgresql-clob-exception&quot; class=&quot;headerlink&quot; tit
+      
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://owen-q.github.io/categories/Tech/"/>
+    
+      <category term="Java" scheme="https://owen-q.github.io/categories/Tech/Java/"/>
+    
+      <category term="Spring" scheme="https://owen-q.github.io/categories/Tech/Java/Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://owen-q.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>lombok gradle 설치하기</title>

@@ -14,15 +14,29 @@
     </url>
 
     <url>
-        <loc>https://owen-q.github.io/categories/Tech/</loc>
-        <lastmod>2018-07-05T23:33:09.000Z</lastmod>
+        <loc>https://owen-q.github.io/categories/Java/</loc>
+        <lastmod>2018-07-16T05:04:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://owen-q.github.io/categories/Java/</loc>
-        <lastmod>2018-07-16T05:04:53.000Z</lastmod>
+        <loc>https://owen-q.github.io/categories/Tech/</loc>
+        <lastmod>2018-07-17T05:17:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://owen-q.github.io/categories/Tech/Java/</loc>
+        <lastmod>2018-07-17T05:17:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://owen-q.github.io/categories/Tech/Java/Spring/</loc>
+        <lastmod>2018-07-17T05:17:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -16,7 +16,7 @@
 
 
 
-    <title>lombok gradle 설치하기 - Dev repository</title>
+    <title>Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented - Dev repository</title>
     <meta name="author" content="Owen Q">
     
         <meta name="keywords" content="Java,Developer,Backend,">
@@ -25,19 +25,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg"},"articleBody":"lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &#123;\text &#123;\t\tspringBootVersion = &apos;2.0.3.RELEASE&apos;\t&#125;\trepositories &#123;\t\tmavenCentral()\t\tmaven &#123;\t\t\turl &quot;https://plugins.gradle.org/m2/&quot;\t\t&#125;\t&#125;\tdependencies &#123;\t\tclasspath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot;)\t\tclasspath(&quot;io.franzbecker:gradle-lombok:1.14&quot;) //추가\t&#125;&#125;......apply plugin: &apos;io.franzbecker.gradle-lombok&apos; //추가......dependencies &#123;\tcompileOnly(&apos;org.projectlombok:lombok:1.18.0&apos;)// &#125;\n","dateCreated":"2018-07-16T13:08:05+09:00","dateModified":"2018-07-16T14:04:53+09:00","datePublished":"2018-07-16T13:08:05+09:00","description":"","headline":"lombok gradle 설치하기","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/"},"publisher":{"@type":"Organization","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg","logo":{"@type":"ImageObject","url":"profile-dk.jpeg"}},"url":"https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/","keywords":"lombok, configuration"}</script>
-    <meta name="description" content="lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &amp;#123;	ext &amp;#123;		springBootVersion = &amp;apos;2.0.3.RELEASE&amp;apos;	&amp;#125;	repositories &amp;#123;		mavenCentr">
-<meta name="keywords" content="lombok,configuration">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg"},"articleBody":"Spring boot2 + hibernate + postgresql clob exceptionapplication.properties 에 아래 설정 추가12spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=falsespring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect\n","dateCreated":"2018-07-17T14:15:57+09:00","dateModified":"2018-07-17T14:17:37+09:00","datePublished":"2018-07-17T14:15:57+09:00","description":"","headline":"Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/"},"publisher":{"@type":"Organization","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg","logo":{"@type":"ImageObject","url":"profile-dk.jpeg"}},"url":"https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/","keywords":"Spring"}</script>
+    <meta name="description" content="Spring boot2 + hibernate + postgresql clob exceptionapplication.properties 에 아래 설정 추가12spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=falsespring.jpa.database-platform=org.hibernate.d">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="lombok gradle 설치하기">
-<meta property="og:url" content="https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/index.html">
+<meta property="og:title" content="Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented">
+<meta property="og:url" content="https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/index.html">
 <meta property="og:site_name" content="Dev repository">
-<meta property="og:description" content="lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &amp;#123;	ext &amp;#123;		springBootVersion = &amp;apos;2.0.3.RELEASE&amp;apos;	&amp;#125;	repositories &amp;#123;		mavenCentr">
+<meta property="og:description" content="Spring boot2 + hibernate + postgresql clob exceptionapplication.properties 에 아래 설정 추가12spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=falsespring.jpa.database-platform=org.hibernate.d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-16T05:04:53.000Z">
+<meta property="og:updated_time" content="2018-07-17T05:17:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lombok gradle 설치하기">
-<meta name="twitter:description" content="lombok + gradle 설정하기build.gradle12345678910111213141516171819202122232425262728293031buildscript &amp;#123;	ext &amp;#123;		springBootVersion = &amp;apos;2.0.3.RELEASE&amp;apos;	&amp;#125;	repositories &amp;#123;		mavenCentr">
+<meta name="twitter:title" content="Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented">
+<meta name="twitter:description" content="Spring boot2 + hibernate + postgresql clob exceptionapplication.properties 에 아래 설정 추가12spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=falsespring.jpa.database-platform=org.hibernate.d">
     
     
         
@@ -232,20 +232,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            lombok gradle 설치하기
+            Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2018-07-16T13:08:05+09:00">
+    <time datetime="2018-07-17T14:15:57+09:00">
 	
-		    Jul 16, 2018
+		    Jul 17, 2018
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Java/">Java</a>
+    <a class="category-link" href="/categories/Tech/">Tech</a>, <a class="category-link" href="/categories/Tech/Java/">Java</a>, <a class="category-link" href="/categories/Tech/Java/Spring/">Spring</a>
 
 
     
@@ -257,7 +257,7 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h1 id="lombok-gradle-설정하기"><a href="#lombok-gradle-설정하기" class="headerlink" title="lombok + gradle 설정하기"></a>lombok + gradle 설정하기</h1><p><strong><em>build.gradle</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">	ext &#123;</span><br><span class="line">		springBootVersion = &apos;2.0.3.RELEASE&apos;</span><br><span class="line">	&#125;</span><br><span class="line">	repositories &#123;</span><br><span class="line">		mavenCentral()</span><br><span class="line">		maven &#123;</span><br><span class="line">			url &quot;https://plugins.gradle.org/m2/&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dependencies &#123;</span><br><span class="line">		classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;&quot;)</span><br><span class="line">		classpath(&quot;io.franzbecker:gradle-lombok:1.14&quot;) //추가</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">apply plugin: &apos;io.franzbecker.gradle-lombok&apos; //추가</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">	compileOnly(&apos;org.projectlombok:lombok:1.18.0&apos;)// </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h1 id="Spring-boot2-hibernate-postgresql-clob-exception"><a href="#Spring-boot2-hibernate-postgresql-clob-exception" class="headerlink" title="Spring boot2 + hibernate + postgresql clob exception"></a>Spring boot2 + hibernate + postgresql clob exception</h1><p><strong><em>application.properties</em></strong> 에 아래 설정 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false</span><br><span class="line">spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect</span><br></pre></td></tr></table></figure></p>
 
             
 
@@ -268,7 +268,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/configuration/">configuration</a> <a class="tag tag--primary tag--small t-link" href="/tags/lombok/">lombok</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Spring/">Spring</a>
 
             </div>
         
@@ -278,8 +278,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" data-tooltip="Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented" aria-label="PREVIOUS: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -288,7 +287,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/06/mysql-collate/" data-tooltip="mysql collate" aria-label="NEXT: mysql collate">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/16/lombok-gradle-configuration/" data-tooltip="lombok gradle 설치하기" aria-label="NEXT: lombok gradle 설치하기">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -306,7 +305,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -314,7 +313,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -322,7 +321,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Google+" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" title="Share on Google+" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -374,8 +373,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" data-tooltip="Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented" aria-label="PREVIOUS: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -384,7 +382,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/06/mysql-collate/" data-tooltip="mysql collate" aria-label="NEXT: mysql collate">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/16/lombok-gradle-configuration/" data-tooltip="lombok gradle 설치하기" aria-label="NEXT: lombok gradle 설치하기">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -402,7 +400,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -410,7 +408,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -418,7 +416,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" title="Share on Google+" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" title="Share on Google+" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -451,7 +449,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -459,7 +457,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -467,7 +465,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -525,9 +523,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://owen-q.github.io/2018/07/16/lombok-gradle-configuration/';
+                 this.page.url = 'https://owen-q.github.io/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/';
                  
-                    this.page.identifier = '2018/07/16/lombok-gradle-configuration/';
+                    this.page.identifier = '2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/';
                  
              };
             (function() {
