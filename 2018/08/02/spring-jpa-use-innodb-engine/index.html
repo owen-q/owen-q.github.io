@@ -16,7 +16,7 @@
 
 
 
-    <title>gradle generate library jar - Dev repository</title>
+    <title>spring jpa use innodb engine - Dev repository</title>
     <meta name="author" content="Owen Q">
     
         <meta name="keywords" content="Java,Developer,Backend,">
@@ -25,19 +25,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg"},"articleBody":"gradle을 사용하여 library jar 생성하기build.gradle \n123456jar &#123;    manifest &#123;        attributes(&apos;Implementation-Title&apos;: project.name,                   &apos;Implementation-Version&apos;: project.version)    &#125;&#125;\n","dateCreated":"2018-07-17T22:09:19+09:00","dateModified":"2018-07-17T22:11:07+09:00","datePublished":"2018-07-17T22:09:19+09:00","description":"","headline":"gradle generate library jar","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/"},"publisher":{"@type":"Organization","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg","logo":{"@type":"ImageObject","url":"profile-dk.jpeg"}},"url":"https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/","keywords":"Java, Gradle, Jar"}</script>
-    <meta name="description" content="gradle을 사용하여 library jar 생성하기build.gradle  123456jar &amp;#123;    manifest &amp;#123;        attributes(&amp;apos;Implementation-Title&amp;apos;: project.name,                   &amp;apos;Implementation-Version&amp;apos;: p">
-<meta name="keywords" content="Java,Gradle,Jar">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg"},"articleBody":"Spring data jpa에서 innodb 사용하기새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다.\nIssue  \n\nSpecified key was too long max key length is 1000 bytes\n\n원인unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인덱스의 크기가 현재 사용하는 engine에서 설정된 limit을 초과해서 발생한 오류.\n해결생성된 테이블을 조사하니, ‘MyISAM’ engine으로 작동중.\nMyISAM과 InnoDB에서 인덱스 생성 관련하여 구동방식이 다르기에 (자세한건 타 포스팅 참조), InnoDB를 사용하도록 설정해야 했다.\n그래서 Spring Boot properties에 아래의 값을 설정하였다.  \n\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDB53Dialect\n\ndialect를 설정하지 않고 mysql을 사용할경우, myisam을 default로 사용한다.  \n","dateCreated":"2018-08-02T11:07:13+09:00","dateModified":"2018-08-02T11:11:45+09:00","datePublished":"2018-08-02T11:07:13+09:00","description":"","headline":"spring jpa use innodb engine","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/"},"publisher":{"@type":"Organization","name":"Owen Q","sameAs":["https://github.com/owen-q","https://www.linkedin.com/in/dong-kyoo-lee-lunker/","mailto:owen.q.dev@gmail.com"],"image":"profile-dk.jpeg","logo":{"@type":"ImageObject","url":"profile-dk.jpeg"}},"url":"https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/","keywords":"Spring, Innodb"}</script>
+    <meta name="description" content="Spring data jpa에서 innodb 사용하기새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다. Issue    Specified key was too long max key length is 1000 bytes  원인unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인">
+<meta name="keywords" content="Spring,Innodb">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="gradle generate library jar">
-<meta property="og:url" content="https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/index.html">
+<meta property="og:title" content="spring jpa use innodb engine">
+<meta property="og:url" content="https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/index.html">
 <meta property="og:site_name" content="Dev repository">
-<meta property="og:description" content="gradle을 사용하여 library jar 생성하기build.gradle  123456jar &amp;#123;    manifest &amp;#123;        attributes(&amp;apos;Implementation-Title&amp;apos;: project.name,                   &amp;apos;Implementation-Version&amp;apos;: p">
+<meta property="og:description" content="Spring data jpa에서 innodb 사용하기새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다. Issue    Specified key was too long max key length is 1000 bytes  원인unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-17T13:11:07.000Z">
+<meta property="og:updated_time" content="2018-08-02T02:11:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gradle generate library jar">
-<meta name="twitter:description" content="gradle을 사용하여 library jar 생성하기build.gradle  123456jar &amp;#123;    manifest &amp;#123;        attributes(&amp;apos;Implementation-Title&amp;apos;: project.name,                   &amp;apos;Implementation-Version&amp;apos;: p">
+<meta name="twitter:title" content="spring jpa use innodb engine">
+<meta name="twitter:description" content="Spring data jpa에서 innodb 사용하기새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다. Issue    Specified key was too long max key length is 1000 bytes  원인unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인">
     
     
         
@@ -232,14 +232,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            gradle generate library jar
+            spring jpa use innodb engine
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2018-07-17T22:09:19+09:00">
+    <time datetime="2018-08-02T11:07:13+09:00">
 	
-		    Jul 17, 2018
+		    Aug 02, 2018
     	
     </time>
     
@@ -257,8 +257,19 @@
     
     <div class="post-content markdown">
         <div class="main-content-wrap">
-            <h1 id="gradle을-사용하여-library-jar-생성하기"><a href="#gradle을-사용하여-library-jar-생성하기" class="headerlink" title="gradle을 사용하여 library jar 생성하기"></a>gradle을 사용하여 library jar 생성하기</h1><p><strong><em>build.gradle</em></strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jar &#123;</span><br><span class="line">    manifest &#123;</span><br><span class="line">        attributes(&apos;Implementation-Title&apos;: project.name,</span><br><span class="line">                   &apos;Implementation-Version&apos;: project.version)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="Spring-data-jpa에서-innodb-사용하기"><a href="#Spring-data-jpa에서-innodb-사용하기" class="headerlink" title="Spring data jpa에서 innodb 사용하기"></a>Spring data jpa에서 innodb 사용하기</h1><p>새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다.</p>
+<p><strong>Issue</strong>  </p>
+<blockquote>
+<p>Specified key was too long max key length is 1000 bytes</p>
+</blockquote>
+<p><strong>원인</strong><br>unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인덱스의 크기가 현재 사용하는 engine에서 설정된 limit을 초과해서 발생한 오류.</p>
+<p><strong>해결</strong><br>생성된 테이블을 조사하니, ‘MyISAM’ engine으로 작동중.</p>
+<p>MyISAM과 InnoDB에서 인덱스 생성 관련하여 구동방식이 다르기에 (자세한건 타 포스팅 참조), InnoDB를 사용하도록 설정해야 했다.</p>
+<p>그래서 Spring Boot properties에 아래의 값을 설정하였다.  </p>
+<blockquote>
+<p>spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDB53Dialect</p>
+</blockquote>
+<p>dialect를 설정하지 않고 mysql을 사용할경우, myisam을 default로 사용한다.  </p>
 
             
 
@@ -269,7 +280,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Gradle/">Gradle</a> <a class="tag tag--primary tag--small t-link" href="/tags/Jar/">Jar</a> <a class="tag tag--primary tag--small t-link" href="/tags/Java/">Java</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Innodb/">Innodb</a> <a class="tag tag--primary tag--small t-link" href="/tags/Spring/">Spring</a>
 
             </div>
         
@@ -279,8 +290,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/28/building-react-native-chat-app/" data-tooltip="building react native chat app" aria-label="PREVIOUS: building react native chat app">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -289,7 +299,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" data-tooltip="Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented" aria-label="NEXT: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/28/building-react-native-chat-app/" data-tooltip="building react native chat app" aria-label="NEXT: building react native chat app">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -307,7 +317,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -315,7 +325,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -323,7 +333,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" title="Share on Google+" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" title="Share on Google+" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -375,8 +385,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/28/building-react-native-chat-app/" data-tooltip="building react native chat app" aria-label="PREVIOUS: building react native chat app">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -385,7 +394,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/17/Method-org-postgresql-jdbc-PgConnection-createClob-is-not-yet-implemented/" data-tooltip="Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented" aria-label="NEXT: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/07/28/building-react-native-chat-app/" data-tooltip="building react native chat app" aria-label="NEXT: building react native chat app">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -403,7 +412,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" title="Share on Facebook" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 </a>
             </li>
@@ -411,7 +420,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" title="Share on Twitter" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
             </li>
@@ -419,7 +428,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" title="Share on Google+" rel="external nofollow noopener noreferrer">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" title="Share on Google+" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i>
                 </a>
             </li>
@@ -452,7 +461,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
                 </a>
             </li>
@@ -460,7 +469,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
                 </a>
             </li>
@@ -468,7 +477,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/" rel="external nofollow noopener noreferrer">
+                <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/" rel="external nofollow noopener noreferrer">
                     <i class="fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
                 </a>
             </li>
@@ -526,9 +535,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://owen-q.github.io/2018/07/17/gradle-generate-library-jar/';
+                 this.page.url = 'https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/';
                  
-                    this.page.identifier = '2018/07/17/gradle-generate-library-jar/';
+                    this.page.identifier = '2018/08/02/spring-jpa-use-innodb-engine/';
                  
              };
             (function() {

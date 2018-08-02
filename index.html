@@ -233,6 +233,133 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title">
                     
+                        <a class="link-unstyled" href="/2018/08/02/spring-jpa-use-innodb-engine/">
+                            spring jpa use innodb engine
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-08-02T11:07:13+09:00">
+	
+		    Aug 02, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Tech/">Tech</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <h1 id="Spring-data-jpa에서-innodb-사용하기"><a href="#Spring-data-jpa에서-innodb-사용하기" class="headerlink" title="Spring data jpa에서 innodb 사용하기"></a>Spring data jpa에서 innodb 사용하기</h1><p>새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다.</p>
+<p><strong>Issue</strong>  </p>
+<blockquote>
+<p>Specified key was too long max key length is 1000 bytes</p>
+</blockquote>
+<p><strong>원인</strong><br>unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인덱스의 크기가 현재 사용하는 engine에서 설정된 limit을 초과해서 발생한 오류.</p>
+<p><strong>해결</strong><br>생성된 테이블을 조사하니, ‘MyISAM’ engine으로 작동중.</p>
+<p>MyISAM과 InnoDB에서 인덱스 생성 관련하여 구동방식이 다르기에 (자세한건 타 포스팅 참조), InnoDB를 사용하도록 설정해야 했다.</p>
+<p>그래서 Spring Boot properties에 아래의 값을 설정하였다.  </p>
+<blockquote>
+<p>spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDB53Dialect</p>
+</blockquote>
+<p>dialect를 설정하지 않고 mysql을 사용할경우, myisam을 default로 사용한다.  </p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/08/02/spring-jpa-use-innodb-engine/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
+                        <a class="link-unstyled" href="/2018/07/28/building-react-native-chat-app/">
+                            building react native chat app
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time datetime="2018-07-28T11:59:06+09:00">
+	
+		    Jul 28, 2018
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content">
+                    <ul>
+<li><p>Setting react &amp; react-native extensions for Visual Code   </p>
+<ul>
+<li><a href="https://fullstackengine.net/recommended-vscode-extensions-react/" rel="external nofollow noopener noreferrer" target="_blank">https://fullstackengine.net/recommended-vscode-extensions-react/</a></li>
+</ul>
+</li>
+<li><p>quick start with <strong>create-react-native-app</strong>  </p>
+</li>
+<li><p>eject project for setting ios, android native dependecies </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run eject</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install <strong>kakao-login</strong>  </p>
+</li>
+</ul>
+<ul>
+<li><p>install <strong>axio</strong> for networking </p>
+</li>
+<li><p>Install <strong>react-navigation</strong> for routing<br>npm install –save react-navigation</p>
+</li>
+<li><p>Install <strong>realm</strong> for device local db </p>
+</li>
+<li><p>Install <strong>react-native-gifted-chat</strong><br>npm install react-native-gifted-chat –save</p>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/07/28/building-react-native-chat-app/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title">
+                    
                         <a class="link-unstyled" href="/2018/07/17/gradle-generate-library-jar/">
                             gradle generate library jar
                         </a>

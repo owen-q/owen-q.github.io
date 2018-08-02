@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://owen-q.github.io/"/>
-  <updated>2018-07-17T13:11:07.000Z</updated>
+  <updated>2018-08-02T02:11:45.000Z</updated>
   <id>https://owen-q.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring jpa use innodb engine</title>
+    <link href="https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/"/>
+    <id>https://owen-q.github.io/2018/08/02/spring-jpa-use-innodb-engine/</id>
+    <published>2018-08-02T02:07:13.000Z</published>
+    <updated>2018-08-02T02:11:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring-data-jpa에서-innodb-사용하기"><a href="#Spring-data-jpa에서-innodb-사용하기" class="headerlink" title="Spring data jpa에서 innodb 사용하기"></a>Spring data jpa에서 innodb 사용하기</h1><p>새롭게 개인 프로젝트를 진행하면서 spring jpa를 사용하는중, 아래와 같은 에러 메세지를 만났다.</p><p><strong>Issue</strong>  </p><blockquote><p>Specified key was too long max key length is 1000 bytes</p></blockquote><p><strong>원인</strong><br>unique 조건을 걸은 column에서 인덱스가 만들어지는데, 이때 생성되는 인덱스의 크기가 현재 사용하는 engine에서 설정된 limit을 초과해서 발생한 오류.</p><p><strong>해결</strong><br>생성된 테이블을 조사하니, ‘MyISAM’ engine으로 작동중.</p><p>MyISAM과 InnoDB에서 인덱스 생성 관련하여 구동방식이 다르기에 (자세한건 타 포스팅 참조), InnoDB를 사용하도록 설정해야 했다.</p><p>그래서 Spring Boot properties에 아래의 값을 설정하였다.  </p><blockquote><p>spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDB53Dialect</p></blockquote><p>dialect를 설정하지 않고 mysql을 사용할경우, myisam을 default로 사용한다.  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spring-data-jpa에서-innodb-사용하기&quot;&gt;&lt;a href=&quot;#Spring-data-jpa에서-innodb-사용하기&quot; class=&quot;headerlink&quot; title=&quot;Spring data jpa에서 innodb 사용하기&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="Tech" scheme="https://owen-q.github.io/categories/Tech/"/>
+    
+    
+      <category term="Spring" scheme="https://owen-q.github.io/tags/Spring/"/>
+    
+      <category term="Innodb" scheme="https://owen-q.github.io/tags/Innodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>building react native chat app</title>
+    <link href="https://owen-q.github.io/2018/07/28/building-react-native-chat-app/"/>
+    <id>https://owen-q.github.io/2018/07/28/building-react-native-chat-app/</id>
+    <published>2018-07-28T02:59:06.000Z</published>
+    <updated>2018-07-29T01:40:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>Setting react &amp; react-native extensions for Visual Code   </p><ul><li><a href="https://fullstackengine.net/recommended-vscode-extensions-react/" rel="external nofollow noopener noreferrer" target="_blank">https://fullstackengine.net/recommended-vscode-extensions-react/</a></li></ul></li><li><p>quick start with <strong>create-react-native-app</strong>  </p></li><li><p>eject project for setting ios, android native dependecies </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run eject</span><br></pre></td></tr></table></figure></li><li><p>Install <strong>kakao-login</strong>  </p></li></ul><ul><li><p>install <strong>axio</strong> for networking </p></li><li><p>Install <strong>react-navigation</strong> for routing<br>npm install –save react-navigation</p></li><li><p>Install <strong>realm</strong> for device local db </p></li><li><p>Install <strong>react-native-gifted-chat</strong><br>npm install react-native-gifted-chat –save</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Setting react &amp;amp; react-native extensions for Visual Code   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://fullstackengine.net/recommended-vsc
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>gradle generate library jar</title>
